@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="ORBIT Surgical">
+  <meta name="keywords" content="ORBIT Surgical">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Orbit Surgical</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src=""></script> -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">ORBIT-Surgical: An Open Simulation Framework for Accelerated Learning in Surgical Autonomy</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              Anonymous Author(s)</span>
+          </div>
+
+          <!-- <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>,</span>
+          </div> -->
+<!-- 
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!- - PDF Link. - ->
+              <span class="link-block">
+                <a href="https://orbit-surgical.github.io"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://orbit-surgical.github.io"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!- - Video Link. - ->
+              <span class="link-block">
+                <a href="https://orbit-surgical.github.io"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!- - Code Link. - ->
+              <span class="link-block">
+                <a href="https://orbit-surgical.github.io"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!- - Dataset Link. - ->
+<!- - 
+              <span class="link-block">
+                <a href="https://orbit-surgical.github.io"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+- ->
+            </div>
+-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img class="img-responsive img-rounded" src="./static/images/teaser.svg" alt="" width="800" >
+<!--       
+      <h2 class="subtitle has-text-centered">
+
+      </h2> -->
+
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Physics-based simulations have the potential to rapidly accelerate progress 
+            in robotic manipulation and locomotion across a wide variety of tasks. 
+            However, a fast, accurate, and robust surgical simulation environment remains 
+            elusive. In this paper, we present ORBIT-Surgical, a physics-based surgical 
+            robot simulation framework using Isaac ORBIT using the Intuitive Surgical da Vinci 
+            Research Kit (dVRK) robotic surgical assistant. We provide twelve benchmark 
+            environments for the dVRK which represent various common tasks in surgical training. 
+            ORBIT-Surgical leverages GPU parallelization to train reinforcement learning (RL) 
+            and imitation learning (IL) algorithms to perform long-horizon surgical robotics 
+            tasks. ORBIT-Surgical also facilitates hand-scripted and human-expert data collection, 
+            reducing barriers to real-world implementations of IL methods. We evaluate 
+            ORBIT-Surgical sim-to-real transfer of the trained policies on a real world dVRK 
+            platform to ensure transferability. ORBIT-Surgical provides an open-source benchmark 
+            for learning complex and long-horizon surgical subtasks.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <video controls>
+            <source src="./static/videos/main-video.mp4" type="video/mp4">
+          </video>  
+        </div>
+      </div>
+    </div>
+    <!--/ Paper video. -->
+    
+  </div>
+</section>
+
+
+
+
+<!-- <section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>
+</code></pre>
+  </div>
+</section> -->
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="https://orbit-surgical.github.io">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://orbit-surgical.github.io" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            The template of this website is borrowed from the source code of <a
+              href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>. The template is licensed under a <a rel="license"
+              href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+              Commons Attribution-ShareAlike 4.0 International License</a>.
+            <!-- Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website. -->
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
