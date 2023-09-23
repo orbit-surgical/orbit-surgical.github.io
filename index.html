@@ -6,7 +6,7 @@
         content="ORBIT Surgical">
   <meta name="keywords" content="ORBIT Surgical">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Orbit Surgical</title>
+  <title>ORBIT-Surgical: An Open Simulation Framework for Accelerated Learning in Surgical Autonomy</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <!-- <script async src=""></script> -->
@@ -42,6 +42,31 @@
 </head>
 <body>
 
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">  
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://isaac-orbit.github.io/">
+            ORBIT
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
 
 <section class="hero">
   <div class="hero-body">
@@ -51,25 +76,56 @@
           <h1 class="title is-2 publication-title">ORBIT-Surgical: An Open Simulation Framework for Accelerated Learning in Surgical Autonomy</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              Anonymous Author(s)</span>
+              Qinxi Yu<sup>*,1</sup>,</span>
+            <span class="author-block">
+              Masoud Moghani<sup>*,1</sup>,</span>
+            <span class="author-block">
+              Karthik Dharmarajan<sup>2</sup>,</span>
+            <span class="author-block">
+              Vincent Schorp<sup>2</sup>,</span>
+            <span class="author-block">
+              William Chung-Ho Panitch<sup>2</sup>,</span>
+            <span class="author-block">
+              Jingzhou Liu<sup>1</sup>,</span>
+            <span class="author-block">
+              Kush Hari<sup>2</sup>,</span>
+            <span class="author-block">
+              Huang Huang<sup>2</sup>,</span>
+            <span class="author-block">
+              Mayank Mittal<sup>3,5</sup>,</span>
+            <span class="author-block">
+              Ken Goldberg<sup>2</sup>,</span>
+            <span class="author-block">
+              Animesh Garg<sup>1,4,5</sup>,</span>
           </div>
 
-          <!-- <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>,</span>
-          </div> -->
-<!-- 
+          &nbsp;
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>*</sup>Equal Contribution</span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>University of Toronto,</span>
+            <span class="author-block"><sup>2</sup>University of California, Berkeley,</span>
+            <span class="author-block"><sup>3</sup>ETH Zurich,</span>
+            <span class="author-block"><sup>4</sup>Georgia Institute of Technology,</span>
+            <span class="author-block"><sup>5</sup>NVIDIA</span>
+          </div>
+ 
           <div class="column has-text-centered">
             <div class="publication-links">
-              <!- - PDF Link. - ->
+              <!-- PDF Link. -->
               <span class="link-block">
                 <a href="https://orbit-surgical.github.io"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                   </span>
-                  <span>Paper</span>
+                  <span>Paper (upon publication)</span>
                 </a>
               </span>
+              <!--
               <span class="link-block">
                 <a href="https://orbit-surgical.github.io"
                    class="external-link button is-normal is-rounded is-dark">
@@ -79,9 +135,10 @@
                   <span>arXiv</span>
                 </a>
               </span>
-              <!- - Video Link. - ->
+              -->
+              <!-- Video Link. -->
               <span class="link-block">
-                <a href="https://orbit-surgical.github.io"
+                <a href="https://youtu.be/4DWBX0Pq0R0"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-youtube"></i>
@@ -89,18 +146,18 @@
                   <span>Video</span>
                 </a>
               </span>
-              <!- - Code Link. - ->
+              <!-- Code Link. -->
               <span class="link-block">
                 <a href="https://orbit-surgical.github.io"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
                   </span>
-                  <span>Code</span>
+                  <span>Code (release upon publication)</span>
                   </a>
               </span>
-              <!- - Dataset Link. - ->
-<!- - 
+              <!-- Dataset Link. -->
+              <!-- 
               <span class="link-block">
                 <a href="https://orbit-surgical.github.io"
                    class="external-link button is-normal is-rounded is-dark">
@@ -109,9 +166,9 @@
                   </span>
                   <span>Data</span>
                   </a>
-- ->
+              -->
             </div>
--->
+
           </div>
         </div>
       </div>
@@ -142,20 +199,15 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Physics-based simulations have the potential to rapidly accelerate progress 
-            in robotic manipulation and locomotion across a wide variety of tasks. 
-            However, a fast, accurate, and robust surgical simulation environment remains 
-            elusive. In this paper, we present ORBIT-Surgical, a physics-based surgical 
-            robot simulation framework using Isaac ORBIT using the Intuitive Surgical da Vinci 
-            Research Kit (dVRK) robotic surgical assistant. We provide twelve benchmark 
-            environments for the dVRK which represent various common tasks in surgical training. 
-            ORBIT-Surgical leverages GPU parallelization to train reinforcement learning (RL) 
-            and imitation learning (IL) algorithms to perform long-horizon surgical robotics 
-            tasks. ORBIT-Surgical also facilitates hand-scripted and human-expert data collection, 
-            reducing barriers to real-world implementations of IL methods. We evaluate 
-            ORBIT-Surgical sim-to-real transfer of the trained policies on a real world dVRK 
-            platform to ensure transferability. ORBIT-Surgical provides an open-source benchmark 
-            for learning complex and long-horizon surgical subtasks.
+            Physics-based simulations have accelerated the progress in learning-based across robotics: 
+            driving, manipulation, and locomotion. Yet, a fast, accurate, and robust surgical simulation 
+            environment remains a challenge. In this paper, we present ORBIT-Surgical, a physics-based 
+            surgical robot simulation framework with photorealistic rendering for the da Vinci Research Kit (dVRK) 
+            surgical robot. We provide twelve surgical tasks for the dVRK which represent common tasks in surgical 
+            training. ORBIT-Surgical leverages GPU parallelization to train reinforcement learning (RL) and imitation learning 
+            (IL) algorithms to facilitate study of robot learning for long-horizon surgical robotics tasks. ORBIT-Surgical also 
+            facilitates hand-scripted and human-expert realistic synthetic data collection for active perception tasks. We 
+            demonstrate ORBIT-Surgical sim-to-real transfer of learned policies to a physical dVRK robot.
           </p>
         </div>
       </div>
