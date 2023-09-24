@@ -1,6 +1,6 @@
 # Orbit Surgical Website
 
-This is the repository that contains source code for the [Orbit Surgical website](https://orbit-surgical.github.io).
+This is the repository that contains source code for the [ORBIT-Surgical website](https://orbit-surgical.github.io).
 
 <!-- If you find Nerfies useful for your work please cite:
 ```

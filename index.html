@@ -232,6 +232,138 @@
 
 
 
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Supplementary Material. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Supplementary Material</h2>
+
+        <div class="content has-text-justified">
+          <h2 class="title is-4">S1: Multi-stage Imitation Learning</h2>
+          <p>
+            Long-horizon tasks are computationally expensive and can be hard to be solved by plain Imitation Learning (IL) algorithms. 
+            Instead, multi-stage IL policy can be learned efficiently, where long-horizon tasks are divided into 
+            subtasks, and an IL policies are trained to perform each subtask separataely. All subtasks are then chained for 
+            end-to-end policy execution. Here, we divide a "Needle Pick and Transfer" task into three stages, i.e. Pick, Handover, and Reach, 
+            and trained subpolicies to perform each subtask using behavior cloning. Figure below shows a successful end-to-end policy execution in simulation.
+          </p>
+          <div class="content has-text-centered">
+            <img src="./static/images/IL.svg"
+                 class="interpolation-image"
+                 alt="Multi-stage imitation learning."/>
+            <p class="is-bold"> DualArm - Needle Pick and Transfer task with multi-stage imitation learning. 
+              a) starting state of both PSMs, 
+              b) right PSM moves down to pick up the needle, 
+              c) needle handoff occurs between the PSMs, 
+              d) PSMs move away from each other, 
+              e) needle is fully transferred to other arm.
+            </p>
+          </div>
+
+          <h2 class="title is-4">S2: System and Physics Parameters</h2>
+          <p>
+            We list, categorize and conduct a sensitivity analysis on the simulation parameters in the NVIDIA Isaac Sim. 
+            We focus on the representative environment, 'Threaded Needle Pass Ring', where the task is to pass a suture needle with 
+            a soft thread through a ring. This environment is selected because it involves extensive interactions between objects, 
+            including interactions between deformable objects and rigid objects. To determine the impact of individual parameters, 
+            we held all others constant, varied one specific parameter at a time, and noted results.
+          </p>
+          <h2 class="title is-5">System parameters:</h2>
+          <p>
+            <ul>
+              <li> <b>dt</b> (The physics simulation time-step in seconds). We currently use the value of 0.005 because this is the largest 
+            <b>dt</b> value that can provide a fast and stable simulation without jitter. We find that <b>dt</b> of 0.007 cause oscillation 
+            when objects interact and deformable object simulation is not stable. We find that the smaller <b>dt</b> value of 0.002 results 
+            in a stable yet slower simulation, extending the time required for a single demonstration. For example, the time needed to collect 
+            one demonstration is 27 seconds for <b>dt</b> 0.005 and 68 seconds for <b>dt</b> 0.002.</li>
+              <li> Solver type [PGS (Projective Gauss-Seidel) or TGS (Truncated Gauss-Seidel)]. Both PGS and TGS offer similar levels of stability and realism in simulations. We used TGS.</li>
+          </ul>
+          </p>
+          <h2 class="title is-5">Physics parameters - Rigid body (suture needle):</h2>
+          <p>
+            <ul>
+              <li> Solver iteration counts: We find this parameter is not a sensitive parameter. Solver iteration counts with value 1 and a 
+            much larger value, 128 can provide similar simulation behavior. But a large solver iterations count slows the simulation process. 
+            We currently use 1 for both solver_position_iteration_count and solver_velocity_iteration_count, which is the minimum value that ensures stability.</li>
+              <li> Contact offset and Rest offset: They are used to control the contact generation. Collision detection starts 
+            to generate contact points as soon as two shapes get closer than the sum of their contact offsets. The rest offset quantifies how 
+            close a shape gets to others at rest. An “auto compute” feature is provided by Nvidia Isaac Sim. By default, the two offsets, 
+            remeshing resolution and triangle count can be all computed automatically by the engine based on the objects’ mesh geometry. 
+            These auto computed values can sometimes provide a stable simulation, sometimes will just give bad simulation, depending on the 
+            assets’ geometry. We find that the autocomputed contact offset and rest offset already provide a stable and realistic for our suture needle simulation.</li>
+              <li> Friction: (both static and dynamic friction). We currently use the value of 0.5 for both static and dynamic friction.</li>
+              <li> Damping:  We currently have linear damping of 0.05 and angular damping of 0.05. We find the damping does not have much impact 
+            on the stability of the simulation. But larger damping slows down the movement of the rigid body. We use the minimum value that ensures stability.</li>
+            </ul>
+          </p>
+          <h2 class="title is-5">Physics parameters - Soft body (thread):</h2>
+          <p>
+            <ul>
+              <li> Simulation mesh resolution: The simulation mesh resolution is highly sensitive. We currently use the value 28 for the thread. 
+              Increasing or decreasing the parameter by a value greater than 3 can lead to a badly simulated collision mesh or mismatch between 
+              visual mesh and collision mesh. The simulation mesh resolution needs to be carefully tuned.</li>
+              <li> Contact offset and Rest offset: contact offset and rest offset are used to compute the contact with other objects. 
+              For the deformable thread, the autocomputed offsets lead to unstable simulation and the offset parameters of the thread are very sensitive. 
+              We currently use 0.0003 for contact offset and 0.0002 for rest offset. Increasing or decreasing 0.0001 can lead to mismatch between visual mesh 
+              and collision mesh, which can lead to the issue of penetrating other objects during interactions.</li>
+              <li> Solver position iteration count: We find this parameter is not a sensitive parameter. Solver position iteration counts with value 1 and a 
+              much larger value, 128 can provide similar simulation behavior. But a large solver iterations count slows down the simulation process. We currently 
+              use 16 for solver_position_iteration_count, which is the minimum value that ensures stability.</li>
+              <li> Remeshing resolution and triangle count: These parameters are used for computing the collision mesh by Nvidia Isaac Sim. We use the auto-computed 
+                remeshing resolution and triangle count which gives a stable simulation.</li>
+            </ul>
+          </p> 
+
+        </div>
+      </div>
+    </div>
+    <!--/ Supplementary Material. -->
+
+    <!-- FAQ. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Frequently Asked Questions</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            <b>Q:</b> Is ORBIT-Surgical fully free and open-source?
+          </p>
+          <p>
+            <b>A:</b> The underlying robotics simulation application, <a href="https://developer.nvidia.com/isaac-sim">NVIDIA Isaac Sim</a> is free for individual use. ORBIT-Surgical will be released as a free and open-source package upon publication.
+          </p>
+          <p>
+            <b>Q:</b> What are the differences between ORBIT-Surgical and Intuitive Surgical's proprietary SimNow?
+          </p>
+          <p>
+            <b>A:</b> SimNow is a commercial platform for surgeons to practice the skills and techniques needed to perform surgical procedures. 
+            It provides a simulated environment that can give the surgeon a realistic experience; ORBIT-Surgical is intended as a benchmark to spur 
+            research on supervised autonomy for robot-assisted surgery. We aim to provide simulated environments with a large number of parallel 
+            environments for efficient data collection and fast surgical robot learning, as well as accurate physics for sim-to-real transfer of learned policies. 
+            In addition, the differences also lie in the way how the simulators can be utilized. Specifically:
+            <ul>
+              <li> While SimNow is tailored for human practitioners using the MTMs, ORBIT-Surgical offers integration with a range of reinforcement frameworks for learning. </li>
+              <li> SimNow is compatible with da Vinci Si, X/Xi, and SP. However, it does not support the da Vinci Research Kit (dVRK) which is commonly found in academic labs. </li>
+              <li> SimNow is not open-source while ORBIT-Surgical will be open-sourced upon publication to contribute to the community. </li>
+            </ul> 
+          </p>
+          <p>
+            <b>Q:</b> How much time is required to train the RL policies?
+          </p>
+          <p>
+            <b>A:</b> Both tasks involving "Suture Needle Lift" task and "Shunt Insertion" task can be trained under 2 hours on a single NVIDIA RTX 3090 GPU.
+          </p>
+
+        </div>
+      </div>
+    </div>
+    <!--/ FAQ. -->
+
+  </div>
+</section>
+
+
 
 <!-- <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
@@ -245,6 +377,10 @@
 <footer class="footer">
   <div class="container">
     <div class="content has-text-centered">
+      <a class="icon-link"
+         href="mailto:moghani@cs.toronto.edu">
+        <i class="fa fa-envelope"></i>
+      </a>
       <a class="icon-link"
          href="https://orbit-surgical.github.io">
         <i class="fas fa-file-pdf"></i>
