@@ -6,7 +6,7 @@
         content="ORBIT Surgical">
   <meta name="keywords" content="ORBIT Surgical">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ORBIT-Surgical: An Open Simulation Framework for Accelerated Learning in Surgical Autonomy</title>
+  <title>ORBIT-Surgical: An Open-Simulation Framework for Learning Surgical Augmented Dexterity</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-T5R477R2CR"></script>
@@ -19,7 +19,7 @@
 
     gtag('js', new Date());
 
-    gtag('config', 'G-PYVRSFMDRL');
+    gtag('config', 'G-T5R477R2CR');
   </script>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
@@ -57,6 +57,9 @@
           More Research
         </a>
         <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://orbit-surgical.github.io/sufia/">
+            SuFIA
+          </a>
           <a class="navbar-item" href="https://isaac-orbit.github.io/">
             ORBIT
           </a>
@@ -73,14 +76,14 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-2 publication-title">ORBIT-Surgical: An Open Simulation Framework for Accelerated Learning in Surgical Autonomy</h1>
+          <h1 class="title is-2 publication-title">ORBIT-Surgical: An Open-Simulation Framework for Learning Surgical Augmented Dexterity</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://quincy-u.github.io/">Qinxi Yu</a><sup>*,1</sup>,</span>
             <span class="author-block">
               <a href="https://masoudmoghani.com/">Masoud Moghani</a><sup>*,1</sup>,</span>
             <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=V6e6hncAAAAJ&hl=en">Karthik Dharmarajan</a><sup>2</sup>,</span>
+              <a href="https://kdharmarajan.com/">Karthik Dharmarajan</a><sup>2</sup>,</span>
             <span class="author-block">
               <a href="https://ch.linkedin.com/in/vincent-schorp-05b68a181">Vincent Schorp</a><sup>2</sup>,</span>
             <span class="author-block">
@@ -96,7 +99,7 @@
             <span class="author-block">
               <a href="https://goldberg.berkeley.edu/">Ken Goldberg</a><sup>2</sup>,</span>
             <span class="author-block">
-              <a href="https://animesh.garg.tech/">Animesh Garg</a><sup>1,4,5</sup>,</span>
+              <a href="https://animesh.garg.tech/">Animesh Garg</a><sup>1,4,5</sup></span>
           </div>
 
           &nbsp;
@@ -108,7 +111,7 @@
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>University of Toronto,</span>
             <span class="author-block"><sup>2</sup>University of California, Berkeley,</span>
-            <span class="author-block"><sup>3</sup>ETH Zurich,</span>
+            <span class="author-block"><sup>3</sup>ETH Zurich,</span><br>
             <span class="author-block"><sup>4</sup>Georgia Institute of Technology,</span>
             <span class="author-block"><sup>5</sup>NVIDIA</span>
           </div>
@@ -138,7 +141,7 @@
               -->
               <!-- Video Link. -->
               <span class="link-block">
-                <a href="https://youtu.be/4DWBX0Pq0R0"
+                <a href="https://youtu.be/NA3xCRHcZsE"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-youtube"></i>
@@ -199,15 +202,14 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Physics-based simulations have accelerated the progress in learning-based across robotics: 
-            driving, manipulation, and locomotion. Yet, a fast, accurate, and robust surgical simulation 
-            environment remains a challenge. In this paper, we present ORBIT-Surgical, a physics-based 
-            surgical robot simulation framework with photorealistic rendering for the da Vinci Research Kit (dVRK) 
-            surgical robot. We provide twelve surgical tasks for the dVRK which represent common tasks in surgical 
-            training. ORBIT-Surgical leverages GPU parallelization to train reinforcement learning (RL) and imitation learning 
-            (IL) algorithms to facilitate study of robot learning for long-horizon surgical robotics tasks. ORBIT-Surgical also 
-            facilitates hand-scripted and human-expert realistic synthetic data collection for active perception tasks. We 
-            demonstrate ORBIT-Surgical sim-to-real transfer of learned policies to a physical dVRK robot.
+            Physics-based simulations have accelerated progress in robot learning for driving, manipulation, and locomotion.
+            Yet, a fast, accurate, and robust surgical simulation environment remains a challenge. In this paper,
+            we present ORBIT-Surgical, a physics-based surgical robot simulation framework with photorealistic rendering
+            in NVIDIA Omniverse. We provide 14 benchmark surgical tasks for the da Vinci Research Kit (dVRK) and
+            Smart Tissue Autonomous Robot (STAR) which represent common subtasks in surgical training.
+            ORBIT-Surgical leverages GPU parallelization to train reinforcement learning and imitation learning algorithms to facilitate
+            study of robot learning to augment human surgical skills. ORBIT-Surgical also facilitates realistic synthetic data generation
+            for active perception tasks. We demonstrate ORBIT-Surgical sim-to-real transfer of learned policies onto a physical dVRK robot.
           </p>
         </div>
       </div>
@@ -219,7 +221,7 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Video</h2>
         <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/4DWBX0Pq0R0"></iframe>
+          <iframe src="https://www.youtube.com/embed/NA3xCRHcZsE"></iframe>
           <!-- <video controls>
             <source src="./static/videos/main-video.mp4" type="video/mp4">
           </video>   -->
